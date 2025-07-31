@@ -1072,7 +1072,7 @@ footer .right-content {
 }
 
 .footer-content .right-content a:hover {
-  color: #FC3;
+  color: #106705;
 }
 
 footer .social {
@@ -1107,8 +1107,8 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #fba70b;
-  border-color: #fba70b;
+  background-color: #106705;
+  border-color: #106705;
   color: #fff;
 }
 
@@ -1132,7 +1132,7 @@ footer .sub-footer a {
 }
 
 footer .sub-footer a:hover {
-	color: #FC3;
+	color: #106705;
 }
 
 footer .sub-footer p {
