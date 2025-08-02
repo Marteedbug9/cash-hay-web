@@ -78,20 +78,27 @@
 
 		//smoothscroll
 		$('.menu-item').on('click', function (e) {
-			e.preventDefault();
-			var athis = this;
-			var target = this.hash,
-				menu = target;
-			var $target = $(target);
+  const href = $(this).attr('href');
 
-			$('html, body').stop().animate({
-				'scrollTop': $target.offset().top
-			}, 500, 'swing', function () {
-				window.location.hash = target;
-				$('.menu-item').removeClass('active');
-				$(athis).addClass('active');
-			});
-		});
+  // Seulement bloquer les ancres internes (débutant par #)
+  if (href && href.startsWith('#')) {
+    e.preventDefault();
+    var athis = this;
+    var target = this.hash;
+    var $target = $(target);
+
+    if ($target.length) {
+      $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+      }, 500, 'swing', function () {
+        window.location.hash = target;
+        $('.menu-item').removeClass('active');
+        $(athis).addClass('active');
+      });
+    }
+  }
+});
+
 
 		$(window).scroll(function (event) {
 			var scrollPos = $(document).scrollTop() + 80;
